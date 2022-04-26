@@ -15,7 +15,7 @@ class CursoSeeder extends Seeder
 
         $faker = Faker\Factory::create('pt_BR');
 
-        foreach (range(1, 500) as $index) {
+        foreach (range(1, 50) as $index) {
             DB::table('curso_extras')->insert([
                 'instagram' => $faker->url('instagram'),
                 'facebook' => $faker->url('facebook'),

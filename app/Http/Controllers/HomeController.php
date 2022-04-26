@@ -43,26 +43,16 @@ class HomeController extends Controller
 
             $listaCursos = ListaCursos::all();
 
+            $candidato = Candidato::where('user_id', Auth::user()->id)->first();
 
-            $teste = Formacao::where('candidato_id','=',$id)->orderBy('id')->take(10)->get();
+            $dados = $candidato->rg;
 
-            //$documentos = Arquivo::where('candidato_id',$candidato->id)->orderBy('id')->take(10)->get();
-
-          
-
-            /*$dados = DB::table('formacaos')
-            ->where('candidato_id', $candidato->id)
-            ->exists()
-            //->select('instituicao')
-            //->get()
-            ;
-
-            if(isset($dados))
+            if($dados != NULL)
            {
             return redirect()->back()
             ->with('cadastrado', 'msg');
            }
-           */
+
            Candidato::updateOrCreate(
                 ['user_id' => $id],
                 [
@@ -122,7 +112,7 @@ class HomeController extends Controller
                     ]);
 
 
-            $candidato = Candidato::where('user_id', Auth::user()->id)->first();
+
             if(!empty($request->allFiles()['anexos'])){
             for($i = 0; $i <count($request->allFiles()['anexos']); $i++){
                $arquivo = $request->allFiles()['anexos'][$i];

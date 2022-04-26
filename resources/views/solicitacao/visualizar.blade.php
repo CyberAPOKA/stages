@@ -585,7 +585,7 @@
 <table class="table">
     <thead>
         <td>Nome</td>
-        <td>Candidato {{$candidatos->id}}</td>
+        <td>Candidato ID</td>
         <td>Arquivos</td>
 
     </thead>

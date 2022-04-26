@@ -14,7 +14,7 @@ class ProfissionalSeeder extends Seeder
         $faker = Faker\Factory::create('pt_BR');
 
 
-        foreach (range(1, 500) as $index) {
+        foreach (range(1, 50) as $index) {
             DB::table('profissionals')->insert([
                 'cursosrealizados' => $faker->paragraph,
                 'outrosconhecimentos' => $faker->paragraph,

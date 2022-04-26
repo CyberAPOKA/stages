@@ -69,8 +69,8 @@ class CandidatoController extends Controller
     public function store(DadosPessoaisSanitizedRequest $request, $id)
     {
 
-        error_log("teste nome social");
-        // dd($request);
+
+        //dd($request);
         try {
             error_log("teste nome social");
             error_log("NomeSocial" . $request->input('nomesocial'));

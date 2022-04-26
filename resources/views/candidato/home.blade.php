@@ -290,7 +290,7 @@
 
                                                 <div id="inputbairro" style="display: none;">
                                                     <input type="text" value="{{isset($candidato->bairro) ? $candidato->bairro : ''}}"
-                                                     id="bairro" name="bairro" placeholder="Substituir bairro acima" class="form-control resetvalue">
+                                                     id="bairro" name="bairro" placeholder="Digite seu bairro" class="form-control resetvalue">
                                                 </div>
 
                                                 <div id="select" style="display: none;">

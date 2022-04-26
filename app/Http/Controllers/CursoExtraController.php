@@ -114,7 +114,6 @@ class CursoExtraController extends Controller
                $anexos->arquivo = $arquivo->store('inscricoes/'.$candidato->id);
                $anexos->nomeanexo = $arquivo->getClientOriginalName();
                $anexos->save();
-
             }
            }
 
@@ -162,23 +161,8 @@ class CursoExtraController extends Controller
             $candidato = Candidato::where('user_id', Auth::user()->id)->first();
             $documentos = Arquivo::where('candidato_id','=',$id)->orderBy('id')->take(10)->get();
 
-            $limite = DB::table('arquivos')
-            ->select('candidato_id')
-            ->get();
-
-            $teste = Arquivo::where('candidato_id','=',$id)->pluck('id');
-
-            /*if(count($documentos) > 5)
-            {
-                DB::table('arquivos')
-                ->select('candidato_id')
-                ->where('candidato_id','=',$id)
-                ->orderBy('id')
-                ->delete();
-            }*/
-
             return view('cadastro_estagiario.curso_extra_edit',
-             compact('cursoExtra', 'documentos', 'candidato', 'limite','teste'));
+             compact('cursoExtra', 'documentos', 'candidato'));
 
         } catch (\Exception $e) {
             Alert::error('Não foi possível acessar')->autoClose(2000);

@@ -20,7 +20,7 @@ class CreateCursosTable extends Migration
             $table->string('facebook')->nullable();
             $table->string('linkedin')->nullable();
             $table->string('outro')->nullable();
-            $table->string('links')->nullable();
+            $table->string('links', 4000)->nullable();
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
         });

@@ -257,11 +257,11 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group row">
-                                        <label class="col-md-4 label-control" for="rua">Rua/Avenida</label>
+                                        <label class="col-md-4 label-control" for="cidade">Cidade</label>
                                         <div class="col-md-8">
-                                            <input type="text" id="rua" class="form-control " placeholder="" name="rua"
-                                                readonly
-                                                value="{{isset($candidato->rua) ? $candidato->rua : old('rua')}}">
+                                            <input type="text" id="cidade" class="form-control" placeholder=""
+                                                name="cidade" readonly
+                                                value="{{isset($candidato->cidade) ? $candidato->cidade : old('cidade')}}">
                                         </div>
                                     </div>
                                 </div>
@@ -279,14 +279,15 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group row">
-                                        <label class="col-md-4 label-control" for="complemento">Complemento</label>
+                                        <label class="col-md-4 label-control" for="bairro">Bairro</label>
                                         <div class="col-md-8">
-                                            <input type="text" id="complemento" class="form-control " placeholder=""
-                                                name="complemento" readonly
-                                                value="{{isset($candidato->complemento) ? $candidato->complemento : old('complemento')}}">
+                                            <input type="text" id="bairro" class="form-control " placeholder=""
+                                                name="bairro" readonly
+                                                value="{{isset($candidato->bairro) ? $candidato->bairro : old('bairro')}}">
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="col-md-6">
                                     <div class="form-group row">
                                         <label class="col-md-4 label-control" for="cep">CEP</label>
@@ -302,21 +303,22 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group row">
-                                        <label class="col-md-4 label-control" for="bairro">Bairro</label>
+                                        <label class="col-md-4 label-control" for="complemento">Complemento</label>
                                         <div class="col-md-8">
-                                            <input type="text" id="bairro" class="form-control " placeholder=""
-                                                name="bairro" readonly
-                                                value="{{isset($candidato->bairro) ? $candidato->bairro : old('bairro')}}">
+                                            <input type="text" id="complemento" class="form-control " placeholder=""
+                                                name="complemento" readonly
+                                                value="{{isset($candidato->complemento) ? $candidato->complemento : old('complemento')}}">
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="col-md-6">
                                     <div class="form-group row">
-                                        <label class="col-md-4 label-control" for="cidade">Cidade</label>
+                                        <label class="col-md-4 label-control" for="rua">Rua/Avenida</label>
                                         <div class="col-md-8">
-                                            <input type="text" id="cidade" class="form-control" placeholder=""
-                                                name="cidade" readonly
-                                                value="{{isset($candidato->cidade) ? $candidato->cidade : old('cidade')}}">
+                                            <input type="text" id="rua" class="form-control " placeholder="" name="rua"
+                                                readonly
+                                                value="{{isset($candidato->rua) ? $candidato->rua : old('rua')}}">
                                         </div>
                                     </div>
                                 </div>

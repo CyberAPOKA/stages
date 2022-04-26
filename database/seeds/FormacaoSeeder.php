@@ -13,7 +13,7 @@ class FormacaoSeeder extends Seeder
     {
         $faker = Faker\Factory::create('pt_BR');
 
-        foreach (range(1, 500) as $index) {
+        foreach (range(1, 50) as $index) {
             DB::table('formacaos')->insert([
                'lista_curso_id' => $this->getRandomCursoId(),
                 'semestre' => $faker->numberBetween(1, 10),

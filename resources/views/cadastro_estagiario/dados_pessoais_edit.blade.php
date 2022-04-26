@@ -6,6 +6,8 @@
 
 @section('content')
 
+  
+
 @if( @isset($errors) && count($errors) > 0)
         <div class="alert alert-danger">
         @foreach( $errors->all() as $error)
@@ -235,7 +237,7 @@
                                         <div class="col-md-8">
                                             <select class="form-control" id="cidade" name="cidade"
                                             onChange="display_payroll_div(this.selectedIndex);">
-                                            <option value="">{{$candidato->cidade}}</option>
+                                            <option value="{{$candidato->cidade}}">{{$candidato->cidade}}</option>
                                                 @foreach ($listaCidades as $listaCidade)
                                                 <option  value="{{$listaCidade->cidade}}">
                                                     {{$listaCidade->cidade}}</option>
@@ -270,7 +272,7 @@
 
                                         <div id="select" style="display: none;">
                                             <select class="form-control" id="bairro2" name="bairro2">
-                                                <option value="">Selecione uma opção</option>
+                                                <option value="{{$candidato->bairro}}">Selecione uma opção</option>
                                                 @foreach ($listaBairros as $listaBairro)
                                                 <option value="{{$listaBairro->bairros}}">
                                                     {{$listaBairro->bairros}}</option>

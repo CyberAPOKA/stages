@@ -13,7 +13,7 @@ class CandidatoSeeder extends Seeder
     {
         $faker = Faker\Factory::create('pt_BR');
 
-        foreach (range(1, 500) as $index) {
+        foreach (range(1, 50) as $index) {
             DB::table('candidatos')->insert([
                 'name' => $faker->name,
                 'email' => $faker->unique()->email,

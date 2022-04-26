@@ -13,7 +13,7 @@ class PdfSeeder extends Seeder
     {
         $faker = Faker\Factory::create('pt_BR');
 
-        foreach (range(1, 500) as $index) {
+        foreach (range(1, 50) as $index) {
             DB::table('arquivos')->insert([
                 'anexos' => $faker->fileExtension('pdf'),
                 'candidato_id' => $this->getRandomCandidatoId(),

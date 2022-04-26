@@ -23,7 +23,7 @@ class UsuarioAdminSeeder extends Seeder
             'name' => 'Administrador TI',
             'email' => 'prefeiturasaoleopoldo@gmail.com',
             'cpf' => '73730348027',
-            'user_id' => '501',
+            'user_id' => '51',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -32,7 +32,7 @@ class UsuarioAdminSeeder extends Seeder
         DB::table('model_has_roles')->insert([
             'role_id' => '1',
             'model_type' => 'App\User',
-            'model_id' => '501',
+            'model_id' => '51',
 
         ]);
     }

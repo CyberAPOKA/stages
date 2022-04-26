@@ -16,9 +16,9 @@ class CreateProfissionalsTable extends Migration
         Schema::create('profissionals', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->bigIncrements('id');
-            $table->string('cursosrealizados')->nullable();
-            $table->string('outrosconhecimentos')->nullable();
-            $table->string('experienciasprofissionais')->nullable();
+            $table->string('cursosrealizados', 4000)->nullable();
+            $table->string('outrosconhecimentos', 4000)->nullable();
+            $table->string('experienciasprofissionais', 4000)->nullable();
             $table->enum('jafoiestagiario',['sim','nao']);
             $table->string('inicioperiodo')->nullable();
             $table->string('fimperiodo')->nullable();

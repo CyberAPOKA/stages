@@ -130,9 +130,8 @@
                                     <table class="table table-striped" id="tabelaConsulta">
                                         <thead align="center">
                                             <tr>
-                                                <th scope="col">teste ID</th>
                                                 <th scope="col">Candidato ID</th>
-                                                <th scope="col">Arquivo ID</th>
+                                                <th scope="col">Documento ID</th>
                                                 <th scope="col">Nome do Arquivo</th>
                                                 <th scope="col">Excluir</th>
                                             </tr>
@@ -141,7 +140,7 @@
                                             @foreach($documentos as $documento)
 
                                             <tr>
-                                                <td>{{ $limite }}</td>
+
                                                 <td>{{ $documento->candidato_id }}</td>
                                                 <td>{{ $documento->id }}</td>
                                                 <td>{{ $documento->nomeanexo }}</td>
@@ -150,8 +149,6 @@
 
                                                     <a class="btn btn-danger delete" onclick="deletepdfs(this)"  href="excluir/{{$documento->id}}">
                                                         Excluir <i class="fa-solid fa-download"></i></a>
-
-
 
                                                </td>
                                             </tr>
@@ -182,6 +179,36 @@
     </div>
 
 
+<script>
+    function deletepdfs(){
+
+   var deleteLinks = document.querySelectorAll('.delete');
+   event.preventDefault();
+
+   for (var i = 0; i < deleteLinks.length; i++) {
+   deleteLinks[i].addEventListener('click', function(event) {
+        Swal.fire({
+ title: 'ALERTA!',
+ text: "Você realmente deseja excluir este arquivo?",
+ icon: 'warning',
+ iconColor: '#e22121',
+ showCancelButton: true,
+ confirmButtonColor: '#d33',
+ cancelButtonColor: '#3085d6',
+ cancelButtonText: 'Cancelar',
+ confirmButtonText: 'Sim, excluir!',
+}).then((result) => {
+ if (result.isConfirmed) {
+   window.location.href = this.getAttribute('href');
+ }
+});
+
+   });
+}
+    }
+</script>
+
+
 
     <script>
         $(document).ready(function () {
@@ -195,35 +222,6 @@
         });
     </script>
 
-@foreach($documentos as $documento)
-<script>
-     function deletepdfs(){
-    var deleteLinks = document.querySelectorAll('.delete');
-    event.preventDefault();
-
-    for (var i = 0; i < deleteLinks.length; i++) {
-    deleteLinks[i].addEventListener('click', function(event) {
-         Swal.fire({
-  title: '{{$documento->nomeanexo}}',
-  text: "Você realmente deseja excluir este arquivo?",
-  icon: 'warning',
-  showCancelButton: true,
-  confirmButtonColor: '#3085d6',
-  cancelButtonColor: '#d33',
-  confirmButtonText: 'Sim, excluir!'
-}).then((result) => {
-  if (result.isConfirmed) {
-    window.location.href = this.getAttribute('href');
-  }
-});
-
-    });
-}
-     }
-</script>
-
-
-@endforeach
 
 {{--
 <script>

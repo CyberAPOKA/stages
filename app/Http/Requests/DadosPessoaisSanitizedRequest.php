@@ -28,6 +28,7 @@ class DadosPessoaisSanitizedRequest extends FormRequest
     {
         return [
             'name' => 'required',
+            'nomesocial' => 'required',
             'cpf' => 'required',
             'rg' => 'required',
             'email' => 'required',
