@@ -1,6 +1,5 @@
 <?php
 
-
 Route::delete('/delete/{id}', 'CursoExtraController@delete');
 
 Route::get('/', function () {
